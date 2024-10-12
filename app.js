@@ -81,9 +81,6 @@ app.use((req, res, next) => {
 });
 
 // Home Route
-app.get("/", (req, res) => {
-  res.send("HI Baby");
-});
 
 app.use("/listings", listings);
 app.use("/listins/:id/reviews", routers);
