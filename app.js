@@ -35,23 +35,23 @@ main()
   })
   .catch((err) => console.log("Hello", err));
 async function main() {
-  await mongoose.connect(dbUrl);
+  await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
 }
 // mongo session
-const store = MongoStore.create({
-  mongoUrl: dbUrl,
-  crypto: {
-    secret: "mysupersecretcode",
-  },
-  touchAfter: 24 * 3600,
-});
+// const store = MongoStore.create({
+//   mongoUrl: dbUrl,
+//   crypto: {
+//     secret: "mysupersecretcode",
+//   },
+//   touchAfter: 24 * 3600,
+// });
 
-store.on("error", () => {
-  console.log("Error in MONGO SESSION STORE", err);
-});
-//express session
+// store.on("error", () => {
+//   console.log("Error in MONGO SESSION STORE", err);
+// });
+// //express session
 const sessionOption = {
-  store,
+  // store,
   secret: "mysupersecretcode",
   resave: false,
   saveUninitialized: true,
@@ -77,13 +77,11 @@ app.use((req, res, next) => {
   res.locals.error = req.flash("error");
   res.locals.UserInfo = req.user;
   res.locals.currUser = req.user;
+  res.locals.admin = String(process.env.ADMIN);
   next();
 });
 
 // Home Route
-app.get("/", (req, res) => {
-  res.send("HI Baby");
-});
 
 app.use("/listings", listings);
 app.use("/listins/:id/reviews", routers);
