@@ -35,23 +35,24 @@ main()
   })
   .catch((err) => console.log("Hello", err));
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
+  await mongoose.connect(dbUrl);
 }
 // mongo session
-// const store = MongoStore.create({
-//   mongoUrl: dbUrl,
-//   crypto: {
-//     secret: "mysupersecretcode",
-//   },
-//   touchAfter: 24 * 3600,
-// });
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+    secret: "mysupersecretcode",
+  },
+  touchAfter: 24 * 3600,
+});
 
-// store.on("error", () => {
-//   console.log("Error in MONGO SESSION STORE", err);
-// });
-// //express session
+store.on("error", () => {
+  console.log("Error in MONGO SESSION STORE", err);
+});
+
+//express session
 const sessionOption = {
-  // store,
+  store,
   secret: "mysupersecretcode",
   resave: false,
   saveUninitialized: true,
