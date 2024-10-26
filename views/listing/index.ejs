@@ -1,37 +1,5 @@
-<body>
-  <br />
-  <!-- <h3>All Listings</h3> -->
-  <style>
-    #filters {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .filter {
-      text-align: center;
-      margin-right: 2rem;
-      opacity: 0.7;
-    }
-    .filter:hover {
-      opacity: 2;
-      cursor: pointer;
-    }
-    .filter p {
-      font-size: 0.8rem;
-    }
-    .taxt-info {
-      display: none;
-    }
-    .txt-toggle {
-      border: 1px solid black;
-      border-radius: 1rem;
-      height: 2.5rem;
-      padding: 1rem;
-      margin-left: 3rem;
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-    }
-  </style>
+<div class="filters-container">
+  <i class="filter fa-solid fa-circle-chevron-left arrow-left" ></i>
   <div id="filters">
     <div class="filter">
       <i class="fa-solid fa-fire"></i>
@@ -87,6 +55,8 @@
       </div>
     </div>
   </div>
+  <i class="filter fa-solid fa-circle-chevron-right arrow-right"></i>
+</div>
   <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1">
     <%for(listing of allListings) {%>
     <a class="listing_a" href="/listings/<%=listing._id%>">
@@ -110,6 +80,7 @@
     </a>
     <%}%>
   </div>
+  <script src="/js/arrow.js"></script>
 </body>
 <script>
   let taxSwitch = document.getElementById("flexSwitchCheckDefault");

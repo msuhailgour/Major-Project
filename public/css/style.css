@@ -1,3 +1,4 @@
+/* Base styles */
 * {
   margin: 0;
   padding: 0;
@@ -18,6 +19,7 @@ body {
 .navbar {
   height: 5rem;
   background-color: pink;
+  z-index: 100;
 }
 .fa-compass {
   color: #fe424d;
@@ -26,7 +28,6 @@ body {
 .nav-link {
   color: #222222 !important;
 }
-
 .f-info-links a {
   text-decoration: none;
   color: #222222 !important;
@@ -43,7 +44,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 .f-info-socials i {
   font-size: 1.2rem;
   margin-right: 1rem;
@@ -57,9 +57,6 @@ body {
   justify-content: center;
   margin-bottom: 0;
 }
-
-/* cards 
-*/
 .card-body {
   height: 100%;
 }
@@ -78,14 +75,9 @@ body {
 .card-body {
   padding: 0 !important;
 }
-
-/* new listing */
 .listing_a {
   text-decoration: none;
 }
-
-/* card effect */
-
 .card-img-overlay {
   opacity: 0;
 }
@@ -93,13 +85,9 @@ body {
   opacity: 0.2;
   background-color: white;
 }
-
-/* show page */
-
 .show-img {
   height: 30vh;
 }
-
 .btn-class {
   display: flex;
 }
@@ -113,9 +101,143 @@ body {
   padding-left: 35px;
   padding-right: 35px;
 }
-
-/* map style */
 #map {
   height: 400px;
   width: 100vh;
+}
+.filters-container {
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  position: relative;
+}
+
+/* Style for arrow buttons */
+.arrow-left,
+.arrow-right {
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 40%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust alignment */
+  background: none; /* Remove button background */
+  color: #222222; /* Button color */
+}
+.arrow-left {
+  left: 10px; /* Position arrow to the left */
+}
+
+.arrow-right {
+  right: 10px; /* Position arrow to the right */
+}
+#filters {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden; /* Hide overflow for horizontal scrolling */
+  width: 80%; /* Adjust width as needed */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+.filter {
+  text-align: center;
+  margin-right: 1rem;
+  padding: 1rem;
+  min-width: 100px; /* Minimum width for each filter */
+  opacity: 0.7;
+}
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filter p {
+  font-size: 0.8rem;
+}
+.taxt-info {
+  display: none;
+}
+.txt-toggle {
+  border: 1px solid black;
+  border-radius: 1rem;
+  height: 2.5rem;
+  min-width: 250px;
+  padding: 1rem;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.txt-toggle > * {
+  margin: 0;
+  padding: 0;
+}
+
+/* Media Queries for Phone and Tablet */
+
+/* Phone (max-width: 600px) */
+@media (max-width: 600px) {
+  .navbar {
+    height: 4rem;
+  }
+  .fa-compass {
+    font-size: 1.5rem;
+  }
+  .f-info-socials i {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+  .card-img-top {
+    border-radius: 0.5rem;
+  }
+  .f-info {
+    height: 3rem;
+    font-size: 0.8rem;
+  }
+  .show-img {
+    height: 20vh;
+  }
+  .btn-red {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  #map {
+    width: 90vw;
+    height: 300px;
+  }
+}
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    height: 4.5rem;
+  }
+  .fa-compass {
+    font-size: 1.75rem;
+  }
+  .f-info-socials i {
+    font-size: 1.1rem;
+    margin-right: 0.8rem;
+  }
+  .card-img-top {
+    border-radius: 0.8rem;
+  }
+  .f-info {
+    height: 3.5rem;
+    font-size: 0.9rem;
+  }
+  .show-img {
+    height: 25vh;
+  }
+  .btn-red {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  #map {
+    width: 95vw;
+    height: 350px;
+  }
 }
