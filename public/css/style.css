@@ -124,13 +124,7 @@ body {
   background: none; /* Remove button background */
   color: #222222; /* Button color */
 }
-.arrow-left {
-  left: 10px; /* Position arrow to the left */
-}
 
-.arrow-right {
-  right: 10px; /* Position arrow to the right */
-}
 #filters {
   display: flex;
   flex-wrap: nowrap;
