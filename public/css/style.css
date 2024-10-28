@@ -230,13 +230,13 @@ body {
     padding-right: 20px;
   }
   #map {
-    width: 100px;
-    height: 150px;
+    margin: auto;
   }
   .mapboxgl-canvas,
   .mapboxgl-map {
-    width: 260px !important;
+    width: 100% !important;
     height: 200px !important;
+    border-radius: 14px;
   }
   .starability-result {
     width: 150px !important;
@@ -294,8 +294,9 @@ body {
   }
   .mapboxgl-canvas,
   .mapboxgl-map {
-    width: 260px !important;
+    width: 100% !important;
     height: 200px !important;
+    border-radius: 14px;
   }
 
   .fa-compass {
