@@ -70,13 +70,13 @@
         <% } %>
         <% if(listing.reviews.length)  {%>
         <p><b>All Reviews</b></p>
-        <div class="row   ">
+        <div class="row abcd12 ">
         <% for(let re of listing.reviews) {%>
-          <div class="card cad-p col-5 ms-3 mb-3">
+          <div class="card cad-p medS  ms-3 mb-3">
             <div class="card-body">
               <div class="div1">
                 <h5><div class="card-title mt-3"> @<%= re.author.username  %> </div></h5>
-                <p class="starability-result" data-rating=<%= re.rating %>>
+                <p class="starability-result"  data-rating=<%= re.rating %>></p>
                 <p><div class="card-text"><%= re.comment %></div></p>
               </div>
            
@@ -111,3 +111,4 @@
 
     
      <script src="/js/map.js"></script>
+     <script src="/js/mediaQ.js"></script>
